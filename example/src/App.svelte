@@ -1,30 +1,40 @@
 <script>
-	export let name;
+  import SvelteGithubLogin from "svelte-github-login";
 </script>
 
-<main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-</main>
-
 <style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
+  main {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
 
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
+  h1 {
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    margin: 0;
+  }
 
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
+  h4 {
+    color: white;
+    margin: 10px 0px;
+  }
 </style>
+
+<main>
+  <h1>Svelte Github Login</h1>
+  <h4>Infinite Scroll Component to Svelte</h4>
+  <ul>
+    <SvelteGithubLogin
+      clientId="XXX"
+      redirectUri="http://localhost:5000/"
+      on:success={params => console.log(params)}
+      on:error={error => console.log(error)}
+      let:onLogin>
+      <button on:click={onLogin}>Github Login</button>
+    </SvelteGithubLogin>
+  </ul>
+</main>
