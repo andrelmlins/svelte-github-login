@@ -31,6 +31,7 @@ yarn install && yarn start
 
 <SvelteGithubLogin
   clientId="XXX"
+  scope="user:email"
   redirectUri="http://localhost:5000/"
   on:success={params => console.log(params)}
   on:error={error => console.log(error)}

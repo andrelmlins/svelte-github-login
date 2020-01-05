@@ -71,6 +71,7 @@
       on:change={e => (clientId = e.target.value)} />
     <SvelteGithubLogin
       {clientId}
+      scope="user:email"
       redirectUri="http://localhost:5000/"
       on:success={params => (status = 'Success')}
       on:error={error => (status = 'Failure')}
