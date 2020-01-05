@@ -26,7 +26,7 @@
 
 <main>
   <h1>Svelte Github Login</h1>
-  <h4>Infinite Scroll Component to Svelte</h4>
+  <h4>Github Login Component to Svelte</h4>
   <ul>
     <SvelteGithubLogin
       clientId="XXX"
