@@ -1094,10 +1094,10 @@ supports-color@^6.1.0:
   dependencies:
     has-flag "^3.0.0"
 
-svelte-github-login@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/svelte-github-login/-/svelte-github-login-0.1.2.tgz#286d6013ef512a51b46aae447f1155650972faf2"
-  integrity sha512-LqbY0FwenahYuMcMUo0ITdZHPDxKYEZWPvTWkHffne3vdM/kiZ9ga1Su/6UMVuP/df0q/osJCeM4+UBE8GdJ1A==
+svelte-github-login@^0.1.3:
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/svelte-github-login/-/svelte-github-login-0.1.3.tgz#869020cacf342bf8d8474ee0d1f5fc571f75fdf3"
+  integrity sha512-ckSG8h0InJgOCc7/GonhX6gQo4tmtvwE061mUWxD4a13cXGbCBbF/fmklELm6L9jTLN9CxH8oibhiQMXebme4A==
 
 svelte@^3.0.0:
   version "3.16.7"

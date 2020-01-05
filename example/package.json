@@ -17,6 +17,6 @@
   },
   "dependencies": {
     "sirv-cli": "^0.4.4",
-    "svelte-github-login": "^0.1.2"
+    "svelte-github-login": "^0.1.3"
   }
 }
