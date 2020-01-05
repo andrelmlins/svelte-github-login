@@ -29,7 +29,7 @@
       try {
         if (!popupWindow || popupWindow.closed !== false) {
           popupWindow.close();
-          dispatch("failure", new Error("The popup was closed"));
+          dispatch("error", new Error("The popup was closed"));
           return;
         }
 
@@ -43,7 +43,7 @@
         dispatch("success", convertQueryParams(popupWindow.location.search));
         popupWindow.close();
       } catch (error) {
-        dispatch("failure", error);
+        dispatch("error", error);
       }
     }, 500);
   };
