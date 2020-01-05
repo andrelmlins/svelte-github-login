@@ -19,8 +19,6 @@
       result[item[0]] = decodeURIComponent(item[1]);
     });
 
-    dispatch("request");
-
     return result;
   };
 
@@ -61,6 +59,8 @@
   const onLogin = () => {
     const urlParams = `client_id=${clientId}&scope=${scope}&redirectUri=${redirectUri}`;
     popupWindow = window.open(`${urlGithub}?${urlParams}`, "github-oauth", "");
+
+    dispatch("request");
 
     poll();
   };
