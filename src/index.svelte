@@ -7,6 +7,7 @@
 
   const dispatch = createEventDispatcher();
   const urlGithub = "https://github.com/login/oauth/authorize";
+  let interval = 0;
   let popupWindow;
 
   const convertQueryParams = url => {
@@ -23,12 +24,21 @@
     return result;
   };
 
+  const close = () => {
+    if (interval) {
+      window.clearInterval(interval);
+      interval = null;
+    }
+
+    popupWindow.close();
+  };
+
   // ReactGithubLogin based
   const poll = () => {
-    window.setInterval(() => {
+    interval = window.setInterval(() => {
       try {
         if (!popupWindow || popupWindow.closed !== false) {
-          popupWindow.close();
+          close();
           dispatch("error", new Error("The popup was closed"));
           return;
         }
@@ -41,9 +51,10 @@
         }
 
         dispatch("success", convertQueryParams(popupWindow.location.search));
-        popupWindow.close();
+        close();
       } catch (error) {
         dispatch("error", error);
+        close();
       }
     }, 500);
   };

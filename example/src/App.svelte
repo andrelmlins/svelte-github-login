@@ -85,5 +85,4 @@
       <span class={status.toLowerCase()}>{status}</span>
     </p>
   {/if}
-  {status}
 </main>
