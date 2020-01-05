@@ -53,8 +53,7 @@
         dispatch("success", convertQueryParams(popupWindow.location.search));
         close();
       } catch (error) {
-        dispatch("error", error);
-        close();
+        // error
       }
     }, 500);
   };
