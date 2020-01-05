@@ -1,6 +1,6 @@
 {
   "name": "svelte-github-login",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Github Login Component to Svelte",
   "repository": "https://github.com/andrelmlins/svelte-github-login",
   "author": "André Lins <andrelucas01@hotmail.com> (https://andrelmlins.github.io/",
