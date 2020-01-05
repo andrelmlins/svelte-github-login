@@ -47,7 +47,7 @@
   }
 
   .success {
-    color: #1b5e20;
+    color: #4caf50;
   }
 
   .failure {
