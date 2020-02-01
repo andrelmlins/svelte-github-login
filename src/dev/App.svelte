@@ -1,5 +1,5 @@
 <script>
-  import SvelteGithubLogin from "svelte-github-login";
+  import SvelteGithubLogin from "../lib/index.svelte";
 
   let clientId = "";
   let status = "";
