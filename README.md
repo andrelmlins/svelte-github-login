@@ -18,7 +18,7 @@ Local demo:
 
 ```
 git clone https://github.com/andrelmlins/svelte-github-login.git
-cd svelte-github-login/example
+cd svelte-github-login
 yarn install && yarn start
 ```
 
