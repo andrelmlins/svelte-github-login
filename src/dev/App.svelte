@@ -1,5 +1,5 @@
 <script>
-  import SvelteGithubLogin from "../lib/index.svelte";
+  import GithubLogin from "../lib/GithubLogin.svelte";
 
   let clientId = "";
   let status = "";
@@ -69,7 +69,7 @@
       value={clientId}
       placeholder="Client ID for GitHub OAuth application "
       on:change={e => (clientId = e.target.value)} />
-    <SvelteGithubLogin
+    <GithubLogin
       {clientId}
       scope="user:email"
       redirectUri="http://localhost:5000/"
@@ -78,7 +78,7 @@
       on:request={() => (status = 'Waiting')}
       let:onLogin>
       <button on:click={onLogin}>Github Login</button>
-    </SvelteGithubLogin>
+    </GithubLogin>
   </div>
   {#if status}
     <p>

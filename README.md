@@ -12,6 +12,8 @@ npm i svelte-github-login
 yarn add svelte-github-login
 ```
 
+<em>Note: to use this library in sapper, install as devDependency. See the [link](https://github.com/sveltejs/sapper-template#using-external-components).</em>
+
 ## Demo [Link](https://svelte-github-login.netlify.com/)
 
 Local demo:
@@ -24,12 +26,14 @@ yarn install && yarn start
 
 ## Examples
 
+An example of how to use the library:
+
 ```js
 <script>
-  import SvelteGithubLogin from "svelte-github-login";
+  import GithubLogin from "svelte-github-login";
 </script>
 
-<SvelteGithubLogin
+<GithubLogin
   clientId="XXX"
   scope="user:email"
   redirectUri="http://localhost:5000/"
@@ -38,7 +42,7 @@ yarn install && yarn start
   let:onLogin
 >
   <button on:click={onLogin}>Github Login</button>
-</SvelteGithubLogin>
+</GithubLogin>
 ```
 
 ## Properties

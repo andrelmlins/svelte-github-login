@@ -5,10 +5,12 @@
   "repository": "https://github.com/andrelmlins/svelte-github-login",
   "author": "André Lins <andrelucas01@hotmail.com> (https://andrelmlins.github.io/)",
   "license": "MIT",
+  "svelte": "src/lib/GithubLogin.svelte",
   "module": "dist/index.mjs",
   "main": "dist/index.js",
   "homepage": "https://svelte-github-login.netlify.com/",
   "files": [
+    "src/lib/GithubLogin.svelte",
     "dist",
     "README.md"
   ],
