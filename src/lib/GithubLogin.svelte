@@ -4,6 +4,9 @@
   export let clientId;
   export let scope;
   export let redirectUri;
+  export let state;
+  export let allowSignup;
+  export let login;
 
   const dispatch = createEventDispatcher();
   const urlGithub = "https://github.com/login/oauth/authorize";
@@ -56,8 +59,23 @@
     }, 500);
   };
 
+  const useParam = (name, variable) => {
+    if (variable) {
+      return `&${name}=${variable}`;
+    }
+
+    return "";
+  };
+
   const onLogin = () => {
-    const urlParams = `client_id=${clientId}&scope=${scope}&redirectUri=${redirectUri}`;
+    let urlParams = `client_id=${clientId}`;
+
+    urlParams += useParam("scope", scope);
+    urlParams += useParam("redirect_uri", redirectUri);
+    urlParams += useParam("allow_signup", allowSignup);
+    urlParams += useParam("state", state);
+    urlParams += useParam("login", login);
+
     popupWindow = window.open(`${urlGithub}?${urlParams}`, "github-oauth", "");
 
     dispatch("request");

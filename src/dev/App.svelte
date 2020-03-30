@@ -71,6 +71,7 @@
       on:change={e => (clientId = e.target.value)} />
     <GithubLogin
       {clientId}
+      allowSignup="true"
       scope="user:email"
       redirectUri="http://localhost:5000/"
       on:success={params => (status = 'Success')}

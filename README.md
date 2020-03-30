@@ -49,14 +49,17 @@ An example of how to use the library:
 
 Raw component props (before transform):
 
-| Prop        | Type   | Description                                          |
-| ----------- | ------ | ---------------------------------------------------- |
-| clientId    | string | Client ID for GitHub OAuth application               |
-| scope       | string | Scope for GitHub OAuth application                   |
-| redirectUri | string | Registered redirect URI for GitHub OAuth application |
-| success     | string | Call with success                                    |
-| error       | string | Call with error                                      |
-| request     | string | Call with offset                                     |
+| Prop        | Type   | Description                                                                 |
+| ----------- | ------ | --------------------------------------------------------------------------- |
+| clientId    | string | Client ID for GitHub OAuth application                                      |
+| scope       | string | A space-delimited list of permissions that the application requires         |
+| redirectUri | string | Registered redirect URI for GitHub OAuth application                        |
+| state       | string | Value created by the maintenance state between the request and the callback |
+| allowSignup | string | Option of unauthenticated users to register                                 |
+| login       | string | Suggests a specific account to use for signing in and authorizing the app.  |
+| success     | string | Call with success                                                           |
+| error       | string | Call with error                                                             |
+| request     | string | Call with offset                                                            |
 
 ## Slot Properties
 
