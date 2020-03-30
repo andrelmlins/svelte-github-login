@@ -57,9 +57,14 @@ Raw component props (before transform):
 | state       | string | Value created by the maintenance state between the request and the callback |
 | allowSignup | string | Option of unauthenticated users to register                                 |
 | login       | string | Suggests a specific account to use for signing in and authorizing the app.  |
-| success     | string | Call with success                                                           |
-| error       | string | Call with error                                                             |
-| request     | string | Call with offset                                                            |
+
+## Events
+
+| Prop    | Type | Description       |
+| ------- | ---- | ----------------- |
+| success | func | Call with success |
+| error   | func | Call with error   |
+| request | func | Call with offset  |
 
 ## Slot Properties
 
