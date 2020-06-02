@@ -1,6 +1,6 @@
 # Svelte Github Login
 
-[![npm version](https://badge.fury.io/js/svelte-github-login.svg)](https://www.npmjs.com/package/svelte-github-login) &bull; [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/andrelmlins/svelte-github-login/blob/master/LICENSE) &bull; [![Build Status](https://travis-ci.com/andrelmlins/svelte-github-login.svg?branch=master)](https://travis-ci.com/andrelmlins/svelte-github-login) &bull; [![Dependencies](https://david-dm.org/andrelmlins/svelte-github-login.svg)](https://david-dm.org/andrelmlins/svelte-github-login) &bull; [![Netlify Status](https://api.netlify.com/api/v1/badges/bba67805-d9ab-4609-9027-a86842c5b6bb/deploy-status)](https://app.netlify.com/sites/xenodochial-saha-aa83fd/deploys) &bull; [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/andrelmlins/svelte-github-login.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/andrelmlins/svelte-github-login/context:javascript)
+[![npm version](https://badge.fury.io/js/svelte-github-login.svg)](https://www.npmjs.com/package/svelte-github-login) &bull; [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/andrelmlins/svelte-github-login/blob/master/LICENSE) &bull; [![Build Status](https://travis-ci.com/andrelmlins/svelte-github-login.svg?branch=master)](https://travis-ci.com/andrelmlins/svelte-github-login) &bull; [![Netlify Status](https://api.netlify.com/api/v1/badges/bba67805-d9ab-4609-9027-a86842c5b6bb/deploy-status)](https://app.netlify.com/sites/xenodochial-saha-aa83fd/deploys) &bull; [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/andrelmlins/svelte-github-login.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/andrelmlins/svelte-github-login/context:javascript)
 
 Github Login Component to Svelte
 
@@ -21,7 +21,7 @@ Local demo:
 ```
 git clone https://github.com/andrelmlins/svelte-github-login.git
 cd svelte-github-login
-yarn install && yarn start
+npm install && npm run dev
 ```
 
 ## Examples
