@@ -1,9 +1,40 @@
-<script>
+<script lang="ts">
   import GithubLogin from "../lib/GithubLogin.svelte";
 
-  let clientId = "";
-  let status = "";
+  let clientId: string = "";
+  let status: string = "";
 </script>
+
+<main>
+  <h1>Svelte Github Login</h1>
+  <h4>Github Login Component to Svelte</h4>
+  <div class="input-form">
+    <input
+      id="clientId"
+      type="text"
+      placeholder="Client ID for GitHub OAuth application"
+      bind:value={clientId}
+    />
+    <GithubLogin
+      {clientId}
+      allowSignup="true"
+      scope="user:email"
+      redirectUri="http://localhost:5000/"
+      on:success={() => (status = "Success")}
+      on:error={() => (status = "Failure")}
+      on:request={() => (status = "Waiting")}
+      let:onLogin
+    >
+      <button on:click={onLogin}>Github Login</button>
+    </GithubLogin>
+  </div>
+  {#if status}
+    <p>
+      Status:
+      <span class={status.toLowerCase()}>{status}</span>
+    </p>
+  {/if}
+</main>
 
 <style>
   main {
@@ -58,33 +89,3 @@
     color: #ffd600;
   }
 </style>
-
-<main>
-  <h1>Svelte Github Login</h1>
-  <h4>Github Login Component to Svelte</h4>
-  <div class="input-form">
-    <input
-      id="clientId"
-      type="text"
-      value={clientId}
-      placeholder="Client ID for GitHub OAuth application "
-      on:change={e => (clientId = e.target.value)} />
-    <GithubLogin
-      {clientId}
-      allowSignup="true"
-      scope="user:email"
-      redirectUri="http://localhost:5000/"
-      on:success={params => (status = 'Success')}
-      on:error={error => (status = 'Failure')}
-      on:request={() => (status = 'Waiting')}
-      let:onLogin>
-      <button on:click={onLogin}>Github Login</button>
-    </GithubLogin>
-  </div>
-  {#if status}
-    <p>
-      Status:
-      <span class={status.toLowerCase()}>{status}</span>
-    </p>
-  {/if}
-</main>

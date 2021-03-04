@@ -1,23 +1,28 @@
-<script>
+<script lang="ts">
   import { createEventDispatcher } from "svelte";
 
-  export let clientId;
-  export let scope;
-  export let redirectUri;
-  export let state;
-  export let allowSignup;
-  export let login;
+  export let clientId: string;
+  export let scope: string | undefined = undefined;
+  export let redirectUri: string | undefined = undefined;
+  export let state: string | undefined = undefined;
+  export let allowSignup: string | undefined = undefined;
+  export let login: string | undefined = undefined;
 
-  const dispatch = createEventDispatcher();
+  const dispatch = createEventDispatcher<{
+    success: Record<string, any>;
+    error: Error;
+    request: never;
+  }>();
+
   const urlGithub = "https://github.com/login/oauth/authorize";
-  let interval = 0;
-  let popupWindow;
+  let interval: number | null = 0;
+  let popupWindow: Window | null;
 
-  const convertQueryParams = url => {
+  const convertQueryParams = (url: string): Record<string, any> => {
     const query = url.substr(1);
-    const result = {};
+    const result: Record<string, any> = {};
 
-    query.split("&").forEach(param => {
+    query.split("&").forEach((param) => {
       const item = param.split("=");
       result[item[0]] = decodeURIComponent(item[1]);
     });
@@ -25,13 +30,15 @@
     return result;
   };
 
-  const close = () => {
+  const close = (): void => {
     if (interval) {
       window.clearInterval(interval);
       interval = null;
     }
 
-    popupWindow.close();
+    if (popupWindow) {
+      popupWindow.close();
+    }
   };
 
   // ReactGithubLogin based
@@ -59,7 +66,7 @@
     }, 500);
   };
 
-  const useParam = (name, variable) => {
+  const useParam = (name: string, variable?: string) => {
     if (variable) {
       return `&${name}=${variable}`;
     }
